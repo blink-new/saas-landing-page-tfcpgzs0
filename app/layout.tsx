@@ -18,6 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* CRITICAL: DO NOT REMOVE/MODIFY THIS COMMENT OR THE SCRIPT BELOW */}
+        <Script src="https://blink.new/auto-engineer.js" type="module" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
