@@ -1,8 +1,8 @@
 
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, ArrowRight, Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Menu, X, Globe, Shield, Zap, Users, BarChart, Lock } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -11,67 +11,63 @@ export default function Home() {
 
   const features = [
     {
-      title: "AI-Powered Insights",
-      description: "Harness the power of artificial intelligence to uncover actionable insights and drive strategic decisions.",
-      icon: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60",
-      color: "from-violet-500/20 to-fuchsia-500/20"
-    },
-    {
-      title: "Enterprise Security",
-      description: "Bank-grade encryption and security protocols to protect your most sensitive data and operations.",
-      icon: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&fit=crop&q=60",
-      color: "from-blue-500/20 to-cyan-500/20"
-    },
-    {
       title: "Global Infrastructure",
-      description: "Powered by a worldwide network of data centers ensuring 99.99% uptime and lightning-fast performance.",
-      icon: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60",
-      color: "from-orange-500/20 to-yellow-500/20"
+      description: "Enterprise-grade cloud infrastructure with 99.99% uptime guarantee across 200+ global regions.",
+      icon: Globe,
+      gradient: "from-[#0066FF] to-[#6D28D9]"
     },
+    {
+      title: "Advanced Security",
+      description: "SOC 2 Type II certified with end-to-end encryption and advanced threat detection.",
+      icon: Shield,
+      gradient: "from-[#00A3FF] to-[#0066FF]"
+    },
+    {
+      title: "Real-time Analytics",
+      description: "AI-powered insights and predictive analytics with sub-second query performance.",
+      icon: BarChart,
+      gradient: "from-[#6D28D9] to-[#9333EA]"
+    },
+    {
+      title: "Enterprise Controls",
+      description: "Granular access controls, audit logs, and compliance management tools.",
+      icon: Lock,
+      gradient: "from-[#9333EA] to-[#7C3AED]"
+    },
+    {
+      title: "Team Collaboration",
+      description: "Advanced workflows, real-time collaboration, and team management tools.",
+      icon: Users,
+      gradient: "from-[#0066FF] to-[#00A3FF]"
+    },
+    {
+      title: "High Performance",
+      description: "Lightning-fast performance with advanced caching and optimization.",
+      icon: Zap,
+      gradient: "from-[#7C3AED] to-[#6D28D9]"
+    }
   ];
 
-  const plans = [
+  const stats = [
+    { value: "200+", label: "Enterprise Customers" },
+    { value: "99.99%", label: "Uptime SLA" },
+    { value: "$2.8B", label: "Processing Annually" },
+    { value: "24/7", label: "Enterprise Support" }
+  ];
+
+  const testimonials = [
     {
-      name: "Growth",
-      price: "$99",
-      description: "Perfect for growing businesses",
-      features: [
-        "Advanced Analytics Dashboard",
-        "Up to 50 Team Members",
-        "100GB Secure Storage",
-        "24/7 Email Support",
-        "API Access"
-      ],
+      quote: "Atlas has transformed how we handle our enterprise operations. The platform's capabilities are unmatched in the industry.",
+      author: "Sarah Chen",
+      role: "CTO, Fortune 500 Tech Company",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60"
     },
     {
-      name: "Scale",
-      price: "$299",
-      description: "For organizations ready to scale",
-      features: [
-        "Enterprise Analytics Suite",
-        "Unlimited Team Members",
-        "1TB Secure Storage",
-        "24/7 Priority Support",
-        "Advanced API Access",
-        "Custom Integrations",
-        "Dedicated Account Manager"
-      ],
-      featured: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "Tailored solutions for large enterprises",
-      features: [
-        "Custom Analytics Solutions",
-        "Unlimited Everything",
-        "Custom Storage Solutions",
-        "White-glove Support",
-        "Full API Access",
-        "Custom Development",
-        "Dedicated Success Team"
-      ],
-    },
+      quote: "The enterprise security features and global infrastructure have given us confidence to scale our operations worldwide.",
+      author: "Michael Zhang",
+      role: "VP Engineering, Global Payments Leader",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60"
+    }
   ];
 
   return (
@@ -81,17 +77,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-                Quantum
-              </h1>
+              <h1 className="text-2xl font-bold text-gradient">Atlas</h1>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-white/70 hover:text-white transition-colors">Features</a>
-              <a href="#pricing" className="text-white/70 hover:text-white transition-colors">Pricing</a>
-              <a href="#testimonials" className="text-white/70 hover:text-white transition-colors">Enterprise</a>
-              <button className="bg-white text-black px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors font-medium">
+              <a href="#platform" className="text-white/70 hover:text-white transition-colors text-sm font-medium">Platform</a>
+              <a href="#security" className="text-white/70 hover:text-white transition-colors text-sm font-medium">Security</a>
+              <a href="#enterprise" className="text-white/70 hover:text-white transition-colors text-sm font-medium">Enterprise</a>
+              <a href="#pricing" className="text-white/70 hover:text-white transition-colors text-sm font-medium">Pricing</a>
+              <button className="button-gradient text-white px-6 py-2.5 rounded-full text-sm font-medium">
                 Get Started
               </button>
             </div>
@@ -115,13 +110,14 @@ export default function Home() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="md:hidden bg-black/90 backdrop-blur-xl border-b border-white/10"
+              className="md:hidden bg-black/90 backdrop-blur-xl"
             >
               <div className="px-4 pt-2 pb-3 space-y-1">
-                <a href="#features" className="block px-3 py-2 text-white/70 hover:text-white">Features</a>
-                <a href="#pricing" className="block px-3 py-2 text-white/70 hover:text-white">Pricing</a>
-                <a href="#testimonials" className="block px-3 py-2 text-white/70 hover:text-white">Enterprise</a>
-                <button className="w-full mt-4 bg-white text-black px-6 py-2.5 rounded-full font-medium">
+                <a href="#platform" className="block px-3 py-2 text-white/70 hover:text-white text-sm font-medium">Platform</a>
+                <a href="#security" className="block px-3 py-2 text-white/70 hover:text-white text-sm font-medium">Security</a>
+                <a href="#enterprise" className="block px-3 py-2 text-white/70 hover:text-white text-sm font-medium">Enterprise</a>
+                <a href="#pricing" className="block px-3 py-2 text-white/70 hover:text-white text-sm font-medium">Pricing</a>
+                <button className="w-full mt-4 button-gradient text-white px-6 py-2.5 rounded-full text-sm font-medium">
                   Get Started
                 </button>
               </div>
@@ -131,48 +127,59 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-32 overflow-hidden">
+      <section className="pt-32 pb-24 overflow-hidden relative">
+        <div className="absolute inset-0 hero-gradient"></div>
+        <div className="absolute inset-0 noise-bg"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Background Effects */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-violet-500/30 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]" />
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 aspect-square w-96 rounded-full bg-gradient-to-tr from-[#FF80B5] to-[#9089FC] opacity-30 blur-3xl" />
-          </div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center relative z-10"
+            className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              The Future of{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-                Enterprise Software
-              </span>
+            <span className="inline-block px-4 py-1.5 bg-white/5 rounded-full text-sm font-medium text-white/70 mb-8">
+              Trusted by Fortune 500 Companies
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto text-balance">
+              Enterprise Infrastructure for the{" "}
+              <span className="text-gradient">Modern Era</span>
             </h1>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Transform your business with AI-powered insights, enterprise-grade security, and unparalleled scalability.
+              Secure, scalable, and reliable infrastructure trusted by the world's leading enterprises. Built for the future of business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-white px-8 py-4 rounded-full text-lg text-black hover:bg-white/90 transition-all flex items-center justify-center gap-2">
-                Start Free Trial
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <button className="button-gradient group px-8 py-4 rounded-full text-white font-medium inline-flex items-center">
+                Schedule Enterprise Demo
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 rounded-full text-lg text-white border border-white/20 hover:bg-white/10 transition-colors">
-                Schedule Demo
+              <button className="px-8 py-4 rounded-full text-white border border-white/10 hover:bg-white/5 transition-colors font-medium">
+                View Platform
               </button>
             </div>
           </motion.div>
+
+          {/* Stats */}
+          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/70 text-sm">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-32 bg-black relative">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Features Grid */}
+      <section id="platform" className="py-32 relative">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -180,7 +187,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Enterprise-Grade Features
+                Enterprise-Grade Platform
               </h2>
               <p className="text-xl text-white/70">
                 Built for scale, security, and performance
@@ -193,23 +200,22 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group relative"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="gradient-border group"
               >
-                <div className={cn(
-                  "absolute inset-0 rounded-3xl bg-gradient-to-b opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-                  feature.color
-                )} />
-                <div className="relative bg-white/5 rounded-3xl p-8 hover:bg-white/10 transition-colors border border-white/10">
-                  <img
-                    src={feature.icon}
-                    alt={feature.title}
-                    className="w-full h-48 object-cover rounded-xl mb-6"
-                  />
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                <div className="relative p-8 rounded-[23px] bg-black h-full">
+                  <div className={cn(
+                    "w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-colors",
+                    `bg-gradient-to-r ${feature.gradient}`
+                  )}>
+                    <feature.icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-white/70">{feature.description}</p>
+                  <p className="text-white/70 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -217,12 +223,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-32 bg-black relative">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-violet-500/20 to-transparent [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Testimonials */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 hero-gradient opacity-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -230,154 +234,67 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Pricing Plans
+                Trusted by Global Leaders
               </h2>
               <p className="text-xl text-white/70">
-                Choose the perfect plan for your business
-              </p>
-            </motion.div>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={cn(
-                  "relative bg-white/5 rounded-3xl p-8 hover:bg-white/10 transition-all border",
-                  plan.featured ? "border-blue-500" : "border-white/10"
-                )}
-              >
-                {plan.featured && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </div>
-                  </div>
-                )}
-                <h3 className="text-2xl font-semibold text-white mb-2">
-                  {plan.name}
-                </h3>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-white/70">/month</span>}
-                </div>
-                <p className="text-white/70 mb-8">{plan.description}</p>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-2 text-white/70">
-                      <CheckCircle className="text-blue-500" size={20} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className={cn(
-                  "w-full px-6 py-3 rounded-full font-medium transition-colors",
-                  plan.featured
-                    ? "bg-blue-500 text-white hover:bg-blue-600"
-                    : "bg-white/10 text-white hover:bg-white/20"
-                )}>
-                  Get Started
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section className="py-32 bg-black relative">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Trusted by Industry Leaders
-              </h2>
-              <p className="text-xl text-white/70">
-                Join thousands of companies transforming their business
+                See why enterprises choose Atlas
               </p>
             </motion.div>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.5}}
-              className="bg-white/5 p-8 rounded-3xl border border-white/10"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60"
-                  alt="CEO"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-blue-500"
-                />
-                <div>
-                  <h4 className="font-semibold text-white">Michael Chen</h4>
-                  <p className="text-white/70">CEO, TechGlobal Inc.</p>
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="gradient-border"
+              >
+                <div className="relative p-8 rounded-[23px] bg-black">
+                  <div className="flex items-center gap-4 mb-6">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-white">{testimonial.author}</h4>
+                      <p className="text-white/70 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-white/70 text-lg leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
                 </div>
-              </div>
-              <p className="text-white/70 text-lg leading-relaxed">
-                "Quantum has revolutionized how we handle our enterprise operations. The AI-powered insights have given us a competitive edge we never thought possible."
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{opacity: 0, x: 20}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.5}}
-              className="bg-white/5 p-8 rounded-3xl border border-white/10"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60"
-                  alt="CTO"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-violet-500"
-                />
-                <div>
-                  <h4 className="font-semibold text-white">Sarah Williams</h4>
-                  <p className="text-white/70">CTO, Future Systems</p>
-                </div>
-              </div>
-              <p className="text-white/70 text-lg leading-relaxed">
-                "The enterprise-grade security and scalability are unmatched. We've seen a 300% improvement in our operational efficiency since implementing Quantum."
-              </p>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black relative">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-violet-500/20 [mask-image:radial-gradient(farthest-side_at_bottom,white,transparent)]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 relative">
+        <div className="absolute inset-0 hero-gradient opacity-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto text-balance">
+              Ready to Transform Your Enterprise Infrastructure?
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Join the next generation of industry leaders. Start your journey with Quantum today.
+              Join the world's leading enterprises in building the future of business infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-white px-8 py-4 rounded-full text-lg text-black hover:bg-white/90 transition-all flex items-center justify-center gap-2">
-                Get Started Now
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <button className="button-gradient group px-8 py-4 rounded-full text-white font-medium inline-flex items-center">
+                Schedule Enterprise Demo
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 rounded-full text-lg text-white border border-white/20 hover:bg-white/10 transition-colors">
-                Talk to Sales
+              <button className="px-8 py-4 rounded-full text-white border border-white/10 hover:bg-white/5 transition-colors font-medium">
+                Contact Sales
               </button>
             </div>
           </motion.div>
@@ -389,20 +306,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent mb-6">
-                Quantum
-              </h3>
+              <h3 className="text-2xl font-bold text-gradient mb-6">Atlas</h3>
               <p className="text-white/70">
-                Empowering enterprises with next-generation software solutions.
+                Enterprise infrastructure for the modern era.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-white mb-4">Product</h4>
+              <h4 className="font-semibold text-white mb-4">Platform</h4>
               <ul className="space-y-2">
-                <li><a href="#features" className="text-white/70 hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="text-white/70 hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Enterprise</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">Security</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Enterprise</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Pricing</a></li>
               </ul>
             </div>
             <div>
@@ -410,22 +325,27 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">Press</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Help Center</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">API Reference</a></li>
                 <li><a href="#" className="text-white/70 hover:text-white transition-colors">Status</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white transition-colors">Security</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>© 2024 Quantum. All rights reserved.</p>
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/70 text-sm">© 2024 Atlas Technologies, Inc. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Privacy</a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Terms</a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Cookies</a>
+            </div>
           </div>
         </div>
       </footer>
